@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<h1>personeelsoverzicht</h1>
+	<ul>
+	{% for personeelsleden in winkel %}
+			<li>
+
+			{{ personeelslid.naam }}, {{ personeelslid.geslacht }}
+			<a href="{{ path('personeelslidwijzigen', {'id':personeelsleden.id}) }}">Wijzigen</a>
+			<a href="{{ path('productverwijderen', {'id':product.id}) }}">Verwijderen</a>
+
+			</li>
+	{% endfor %}
+	<ul>
+{% endblock %}

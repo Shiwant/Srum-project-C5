@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+	<h1>Goederen overzicht</h1>
+	{% for goederenontvangst in Goederenontvangst %}
+		<ul>
+			<li style="color:red">
+			<a href="{{ path('ontvangstgoederen',{'ArtikelNr':Goederenontvangst.ArtikelNr}) }}">
+				{{ Goederenontvangst.ArtikelNr }}, {{ Goederenontvangst.NaamLeverancier }}, {{ Goederenontvangst.Omschrijving }}, {{ Goederenontvangst.Datum }}, {{ Goederenontvangst.Kwaliteit }}
+				</a>
+
+			</li>
+		</ul>
+	{% endfor %}
+{% endblock %}
